@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "748413725398",
+    "project_id": "chat-f2347",
+    "storage_bucket": "chat-f2347.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748413725398:android:fa1b046be2cf7862367777",
+        "android_client_info": {
+          "package_name": "com.example.whatsapp_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748413725398-7tpfvtdia3embb9tp9dsfqd9vi9uo0g6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2XyamsIgYF3JRYzYFZ4miifu6T2LyQ1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748413725398-5qhs94j97k7p28ekndevv09jk47a2pl2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "748413725398-2kmi1ekpn326ipbkog0us06roe0u8q39.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.youtubeClone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
