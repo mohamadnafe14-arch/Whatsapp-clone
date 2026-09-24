@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
+import 'package:whatsapp_clone/features/landpage/view/landpage_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -21,6 +22,7 @@ class WhatAppCloneApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
         appBarTheme: const AppBarTheme(backgroundColor: appBarColor),
       ),
+      home: const LandpageView(),
     );
   }
 }
