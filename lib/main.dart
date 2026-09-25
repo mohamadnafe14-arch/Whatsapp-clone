@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:whatsapp_clone/core/config/app_router.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
 import 'firebase_options.dart';
 
@@ -21,6 +22,7 @@ class WhatAppCloneApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
         appBarTheme: const AppBarTheme(backgroundColor: appBarColor),
       ),
+      routerConfig: AppRouter.router,
     );
   }
 }

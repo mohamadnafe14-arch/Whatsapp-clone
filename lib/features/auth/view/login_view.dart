@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/features/auth/view/widgets/build_app_bar.dart';
+import 'package:whatsapp_clone/features/auth/view/widgets/login_body.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -7,7 +8,8 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:buildAppBar(), 
+      appBar: buildAppBar(),
+      body: SafeArea(child: const LoginBody()),
     );
   }
 }
