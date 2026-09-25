@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:whatsapp_clone/core/widgets/custom_button.dart';
+import 'package:whatsapp_clone/features/auth/view/login_view.dart';
 
 class LandpageBody extends StatelessWidget {
   const LandpageBody({super.key});
@@ -31,7 +33,9 @@ class LandpageBody extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: CustomButton(onTap: () {}, text: 'AGREE AND CONTINUE'),
+          child: CustomButton(onTap: () {
+            context.push(LoginView.routeName);
+          }, text: 'AGREE AND CONTINUE'),
         ),
       ],
     );
