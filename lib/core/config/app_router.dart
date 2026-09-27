@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:whatsapp_clone/features/auth/view/login_view.dart';
+import 'package:whatsapp_clone/features/auth/view/otp_verification_view.dart';
 import 'package:whatsapp_clone/features/landpage/view/landpage_view.dart';
 
 abstract class AppRouter {
@@ -9,6 +10,13 @@ abstract class AppRouter {
       GoRoute(
         path: LoginView.routeName,
         builder: (context, state) => const LoginView(),
+      ),
+      GoRoute(
+        path: OtpVerificationView.routeName,
+        builder: (context, state) {
+          final verificationId = state.extra as String;
+          return OtpVerificationView(verificationId: verificationId);
+        },
       ),
     ],
   );
