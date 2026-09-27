@@ -41,6 +41,9 @@ dependencies:
   cloud_firestore: ^6.10.0
   flutter_riverpod:
   riverpod_annotation:
+  flutter_spinkit: ^5.2.2
+  another_flushbar: ^2.2.4
+  top_snackbar_flutter: ^3.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
