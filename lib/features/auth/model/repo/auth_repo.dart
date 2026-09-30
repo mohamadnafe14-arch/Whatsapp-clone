@@ -1,11 +1,15 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:whatsapp_clone/core/functions/show_error_snack_bar.dart';
 import 'package:whatsapp_clone/core/functions/show_success_snack_bar.dart';
 import 'package:whatsapp_clone/features/auth/view/otp_verification_view.dart';
 part 'auth_repo.g.dart';
+
 @riverpod
 AuthRepo authRepo(Ref ref) => AuthRepo(
   firebaseAuth: FirebaseAuth.instance,
@@ -26,7 +30,10 @@ class AuthRepo {
       verificationCompleted: (PhoneAuthCredential credential) {
         showSuccessToast(context, "Verification Completed");
       },
-      verificationFailed: (FirebaseAuthException e) {},
+      verificationFailed: (FirebaseAuthException e) {
+        log(e.toString());
+        showErrorToast(context: context, message: e.toString());
+      },
       codeSent: (String verificationId, int? resendToken) {
         context.push(OtpVerificationView.routeName, extra: verificationId);
       },

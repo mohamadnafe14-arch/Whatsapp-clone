@@ -1,16 +1,19 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:whatsapp_clone/core/functions/show_error_snack_bar.dart';
 import 'package:whatsapp_clone/core/widgets/custom_button.dart';
 import 'package:whatsapp_clone/features/auth/view/widgets/custom_auth_text_field.dart';
+import 'package:whatsapp_clone/features/auth/viewmodel/auth_viewmodel.dart';
 
-class LoginBody extends StatefulWidget {
+class LoginBody extends ConsumerStatefulWidget {
   const LoginBody({super.key});
 
   @override
-  State<LoginBody> createState() => _LoginBodyState();
+  ConsumerState<LoginBody> createState() => _LoginBodyState();
 }
 
-class _LoginBodyState extends State<LoginBody> {
+class _LoginBodyState extends ConsumerState<LoginBody> {
   Country? _country;
   final TextEditingController _phoneController = TextEditingController();
   @override
@@ -50,7 +53,30 @@ class _LoginBodyState extends State<LoginBody> {
             ],
           ),
           Spacer(),
-          CustomButton(onTap: () {}, text: "Next"),
+          CustomButton(
+            onTap: () {
+              if (_country == null) {
+                showErrorToast(
+                  context: context,
+                  message: "Please choose country",
+                );
+                return;
+              }
+              if (_phoneController.text.trim().isEmpty) {
+                showErrorToast(
+                  context: context,
+                  message: "Please enter phone number",
+                );
+                return;
+              }
+              String phoneNumber =
+                  "+${_country!.phoneCode}${_phoneController.text.trim()}";
+              ref
+                  .read(authViewModelProvider.notifier)
+                  .proceedPhoneAuth(phoneNumber: phoneNumber, context: context);
+            },
+            text: "Next",
+          ),
           SizedBox(height: 20),
         ],
       ),
