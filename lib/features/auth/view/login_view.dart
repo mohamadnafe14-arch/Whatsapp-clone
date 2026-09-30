@@ -8,7 +8,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(title: 'Enter your phone number'),
       body: SafeArea(child: const LoginBody()),
     );
   }

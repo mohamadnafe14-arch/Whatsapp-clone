@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
 
-AppBar buildAppBar(){
+AppBar buildAppBar({required String title}) {
   return AppBar(
-        title: Text('Enter your phone number'),
+        title: Text(title),
         centerTitle: true,
         backgroundColor: backgroundColor,
         elevation: 0,
